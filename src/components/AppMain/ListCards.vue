@@ -6,7 +6,7 @@ export default {
   data(){
     return{
         apiUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0",
-        cardsList:[]
+        cardsList:[],
     }
   },
   components: {
@@ -16,7 +16,7 @@ export default {
     getListCardsItem(){
         axios.get(this.apiUrl)
             .then( response => {
-                this.cardsList = response.data;
+                this.cardsList = response.data.data;
                 console.log('cardsList', this.cardsList)
             })
     }
@@ -28,8 +28,13 @@ export default {
 </script>
 
 <template>
+    <span>{{ cardsList.length }}</span>
     <ul>
-        <ListCardsItem />
+        <ListCardsItem v-for="card in cardsList" :key="card.id"
+        :name = 'card.name'
+        :type = 'card.archetype'
+        :imgUrl = 'card.card_images[0].image_url'
+        />
     </ul>
 </template>
 

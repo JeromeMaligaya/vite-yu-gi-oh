@@ -5,6 +5,20 @@ export default {
 
     }
   },
+  props:{
+    name:{
+        type: String,
+        Required: true
+    },
+    type:{
+        type: String,
+        Required: true
+    },
+    imgUrl:{
+        type: String,
+        Required: true
+    },
+  },
   components: {
 
   },
@@ -16,7 +30,9 @@ export default {
 
 <template>
     <li>
-
+        <img :src="`${imgUrl}`" alt="">
+        {{ name }}
+        {{ type }}
     </li>
 </template>
 
