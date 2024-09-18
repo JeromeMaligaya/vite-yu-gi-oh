@@ -1,5 +1,5 @@
 <script>
-import ListCards from './AppMain/ListCards.vue';
+import ListCardsItem from './ListCardsItem.vue';
 
 export default {
   data(){
@@ -8,7 +8,7 @@ export default {
     }
   },
   components: {
-    ListCards
+    ListCardsItem
   },
   methods: {
 
@@ -17,11 +17,11 @@ export default {
 </script>
 
 <template>
-    <main>
-        <ListCards />
-    </main>
+    <ul>
+        <ListCardsItem />
+    </ul>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>

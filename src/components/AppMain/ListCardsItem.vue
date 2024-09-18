@@ -1,6 +1,4 @@
 <script>
-import ListCards from './AppMain/ListCards.vue';
-
 export default {
   data(){
     return{
@@ -8,7 +6,7 @@ export default {
     }
   },
   components: {
-    ListCards
+
   },
   methods: {
 
@@ -17,11 +15,12 @@ export default {
 </script>
 
 <template>
-    <main>
-        <ListCards />
-    </main>
+    <li>
+
+    </li>
 </template>
 
 <style lang="scss" scoped>
+    @use "./../../style/general.scss" as *
 
 </style>
