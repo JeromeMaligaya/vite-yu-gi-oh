@@ -23,8 +23,12 @@ export default {
 </template>
 
 <style lang="scss">
-    h1{
-        padding: 15px 0;
-        font-weight: 200;
+    header{
+        background-color: #fff;
+    
+        h1{
+            padding: 15px 0;
+            font-weight: 200;
+        }
     }
 </style>
