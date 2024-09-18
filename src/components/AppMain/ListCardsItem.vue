@@ -29,14 +29,29 @@ export default {
 </script>
 
 <template>
-    <li>
+    <li class="card">
         <img :src="`${imgUrl}`" alt="">
-        {{ name }}
-        {{ type }}
+        <h4>{{ name }}</h4>
+        <p>{{ type }}</p>
     </li>
 </template>
 
 <style lang="scss" scoped>
-    @use "./../../style/general.scss" as *
+    @use "./../../style/general.scss" as *;
+
+    .card{
+        flex-basis: calc(20% - 60px / 5);
+        background-color: #D78D44;
+
+        h4,p{
+            font-size: 10px;
+            text-align: center;
+            margin: 7px 3px;
+        }
+
+        h4{
+            color: #fff;   
+        }
+    }
 
 </style>
