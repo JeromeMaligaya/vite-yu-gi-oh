@@ -41,16 +41,21 @@ export default {
 </template>
 
 <style lang="scss">
-    .card-found{
-        background-color: #000;
-        color: #fff;
-        padding:15px 10px;
-        font-size: 12px;
-    }
-    #card-list{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
+    .container{
+        background-color: #fff;
+        padding: 30px; 
+        
+        .card-found{
+            background-color: #000;
+            color: #fff;
+            padding:15px 10px;
+            font-size: 12px;
+        }
+        #card-list{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
     }
 
 </style>

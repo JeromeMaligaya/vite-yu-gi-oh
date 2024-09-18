@@ -24,7 +24,11 @@ export default {
 </template>
 
 <style lang="scss">
- @use "./style/general.scss" as *
+@use "./style/general.scss" as *;
+ 
+ body{
+        background-color: rgb(215, 141, 68);
+    }
 
 </style>
 

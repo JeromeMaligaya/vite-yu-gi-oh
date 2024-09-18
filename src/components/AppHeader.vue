@@ -25,7 +25,11 @@ export default {
 <style lang="scss">
     header{
         background-color: #fff;
-    
+        
+        .container{
+            padding: 0;
+        }
+
         h1{
             padding: 15px 0;
             font-weight: 200;
