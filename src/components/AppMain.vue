@@ -1,5 +1,6 @@
 <script>
 import ListCards from './AppMain/ListCards.vue';
+import MainSelect from './AppMain/MainSelect.vue';
 
 export default {
   data(){
@@ -8,7 +9,8 @@ export default {
     }
   },
   components: {
-    ListCards
+    ListCards,
+    MainSelect
   },
   methods: {
 
@@ -18,6 +20,7 @@ export default {
 
 <template>
     <main>
+        <MainSelect />
         <ListCards />
     </main>
 </template>
