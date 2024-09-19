@@ -15,8 +15,8 @@ export default {
     getArchetype(){
         axios.get(this.archetypeApiUrl)
         .then(response => {
-            this.archetypeApiUrl = response.data.slice(0, 80);
-            console.log('archetypeApiUrl',this.archetypeApiUrl);
+            this.archetypeList = response.data.slice(0, 80);
+            console.log('archetypeList',this.archetypeList);
         })
         .catch(function (error) {
             console.log(error);
@@ -36,10 +36,10 @@ export default {
 <template>
     <div class="container">
         <select name="" id="select-archetype">
-            <option selected disabled>Choose an archetype</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="#" disabled selected>Choose an Archetype</option>
+            <option v-for="(item, index) in archetypeList" :key="index" :value="item.archetype_name">
+                {{ item.archetype_name }}
+            </option>
         </select>
     </div>
 </template>
@@ -52,7 +52,7 @@ export default {
     background-color: #D78D44;
 
     #select-archetype{
-        width: 150px;
+        width: 175px;
         height: 25px;
     }
 }
