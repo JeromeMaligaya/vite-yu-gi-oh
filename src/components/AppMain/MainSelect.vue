@@ -25,6 +25,10 @@ export default {
 
         })
     },
+    sendArchetype(value){
+        console.log(value)
+        this.$emit("selectArchetype", value)
+    }
   },
   created(){
     this.getArchetype()
@@ -35,10 +39,11 @@ export default {
 
 <template>
     <div class="container">
-        <select name="" id="select-archetype">
+        <select name="" id="select-archetype" @change="sendArchetype($event.target.value)">
             <option value="#" disabled selected>Choose an Archetype</option>
+            
             <option v-for="(item, index) in archetypeList" :key="index" :value="item.archetype_name">
-                {{ item.archetype_name }}
+            {{ item.archetype_name }}
             </option>
         </select>
     </div>
