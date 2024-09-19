@@ -16,7 +16,13 @@ export default {
     MainSelect
   },
   methods: {
-    getListCardsItem(){
+    getListCardsItem(archetypeSearched = ""){
+      console.log(archetypeSearched)
+
+      if (archetypeSearched) {
+        this.apiUrl += `&archetype=${encodeURIComponent(archetypeSearched)}`;
+      }
+
       axios.get(this.apiUrl)
         .then( response => {
           this.cardsList = response.data.data;
@@ -33,7 +39,7 @@ export default {
 
 <template>
     <main>
-        <MainSelect />
+        <MainSelect @select-archetype="getListCardsItem"/>
         <ListCards :cardsList="cardsList"/>
     </main>
 </template>
