@@ -1,17 +1,36 @@
 <script>
+import axios from 'axios';
+
 export default {
   data(){
     return{
-
+        archetypeApiUrl: "https://db.ygoprodeck.com/api/v7/archetypes.php",
+        archetypeList: [],
     }
   },
   components: {
 
   },
   methods: {
+    getArchetype(){
+        axios.get(this.archetypeApiUrl)
+        .then(response => {
+            this.archetypeApiUrl = response.data.slice(0, 80);
+            console.log('archetypeApiUrl',this.archetypeApiUrl);
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+        .finally(function () {
 
+        })
+    },
   },
+  created(){
+    this.getArchetype()
+  }
 }
+
 </script>
 
 <template>
